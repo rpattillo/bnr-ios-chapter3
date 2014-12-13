@@ -14,6 +14,9 @@
    NSString *_serialNumber;
    int _valueInDollars;
    NSDate *_dateCreated;
+   
+   Item *_containedItem;
+   Item *_container;
 }
 
 + (instancetype)randomItem;
@@ -36,5 +39,11 @@
 - (int)valueInDollars;
 
 - (NSDate *)dateCreated;
+
+- (void)setContainedItem:(Item *)item;
+- (Item *)containedItem;
+
+- (void)setContainer:(Item *)item;
+- (Item *)container;
 
 @end

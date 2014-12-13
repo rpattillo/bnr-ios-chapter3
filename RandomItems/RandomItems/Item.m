@@ -113,6 +113,31 @@
 }
 
 
+- (void)setContainedItem:(Item *)item
+{
+   _containedItem = item;
+   item.container = self;
+}
+
+
+- (Item *)containedItem
+{
+   return _containedItem;
+}
+
+
+- (void)setContainer:(Item *)item
+{
+   _container = item;
+}
+
+
+- (Item *)container
+{
+   return _container;
+}
+
+
 #pragma mark - Overrides
 
 - (NSString *)description

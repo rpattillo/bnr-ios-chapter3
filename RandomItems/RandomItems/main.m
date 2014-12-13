@@ -25,12 +25,12 @@ int main(int argc, const char * argv[]) {
       
       Item *item = [[Item alloc] init];
       
-      [item setItemName:@"Red Sofa"];
-      [item setSerialNumber:@"A1B2C"];
-      [item setValueInDollars:100];
+      item.itemName = @"Red Sofa";
+      item.serialNumber = @"A1B2C";
+      item.valueInDollars = 100;
       
-      NSLog( @"%@ %@ %@ %d", [item itemName], [item dateCreated],
-            [item serialNumber], [item valueInDollars] );
+      NSLog( @"%@ %@ %@ %d", item.itemName, item.dateCreated,
+            item.serialNumber, item.valueInDollars );
       
       items = nil;
    }

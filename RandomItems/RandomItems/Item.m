@@ -10,6 +10,9 @@
 
 @implementation Item
 
+
+#pragma mark - Accessors
+
 - (void)setItemName:(NSString *)str
 {
    _itemName = str;
@@ -49,6 +52,19 @@
 - (NSDate *)dateCreated
 {
    return _dateCreated;
+}
+
+
+#pragma mark - Overrides
+
+- (NSString *)description
+{
+   NSString *description = [[NSString alloc] initWithFormat:@"%@ (%@): Worth $%d, recorded on %@",
+                            self.itemName,
+                            self.serialNumber,
+                            self.valueInDollars,
+                            self.dateCreated];
+   return description;
 }
 
 @end

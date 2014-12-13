@@ -16,13 +16,12 @@
 {
    NSArray *randomAdjectiveList = @[@"Fluffy", @"Rusty", @"Shiny"];
    NSArray *randomNounList = @[@"Bear", @"Spork", @"Mac"];
-   
    NSInteger adjectiveIndex = arc4random() % [randomAdjectiveList count];
    NSInteger nounIndex = arc4random() % [randomNounList count];
-   
    NSString *randomName = [NSString stringWithFormat:@"%@ %@",
-                           [randomAdjectiveList objectAtIndex:adjectiveIndex],
-                           [randomNounList objectAtIndex:nounIndex]];
+                           randomAdjectiveList[adjectiveIndex],
+                           randomNounList[nounIndex]];
+   
    int randomValue = arc4random() % 100;
    
    NSString *randomSerialNumber = [NSString stringWithFormat:@"%c%c%c%c%c",
@@ -35,7 +34,6 @@
    Item *newItem = [[self alloc] initWithItemName:randomName
                                    valueInDollars:randomValue
                                      serialNumber:randomSerialNumber];
-   
    return newItem;
    
 }

@@ -125,4 +125,10 @@
    return description;
 }
 
+
+- (void)dealloc
+{
+   NSLog(@"Destroying: %@", self);
+}
+
 @end

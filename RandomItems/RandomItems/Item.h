@@ -10,13 +10,13 @@
 
 @interface Item : NSObject
 
-@property NSString *itemName;
-@property NSString *serialNumber;
-@property int valueInDollars;
-@property NSDate *dateCreated;
+@property (nonatomic, copy) NSString *itemName;
+@property (nonatomic, copy) NSString *serialNumber;
+@property (nonatomic) int valueInDollars;
+@property (nonatomic, readonly, strong) NSDate *dateCreated;
 
-@property Item *containedItem;
-@property Item *container;
+@property (nonatomic, strong) Item *containedItem;
+@property (nonatomic, weak) Item *container;
 
 
 + (instancetype)randomItem;

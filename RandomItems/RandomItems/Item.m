@@ -68,6 +68,15 @@
 }
 
 
+#pragma mark - Accessors
+
+- (void)setContainedItem:(Item *)containedItem
+{
+   _containedItem = containedItem;
+   _containedItem.container = self;
+}
+
+
 #pragma mark - Overrides
 
 - (NSString *)description
